@@ -1,0 +1,46 @@
+@keyframes slideIn {
+    from {
+    transform: translateX(-200px);
+    opacity: 0;
+    }
+    to {
+    transform: translateX(0px);
+    opacity: 1;
+    }
+}
+
+#nav{
+    background-color:  rgb(76, 124, 76);
+    margin: 0px;
+}
+#form{
+    border: 1px solid;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation-name: slideIn;
+    animation-duration: 2s;
+    width: 350px;
+}
+.firstname{
+    margin: 10px;
+}
+.name{
+    margin: 10px;
+}
+.sexe{
+    margin: 10px;
+}
+.email{
+    margin: 10px;
+}
+.pizza{
+    margin: 10px;
+}
+.type{
+    margin-top: 5px;
+}
+.autre{
+    margin: 10px;
+}
