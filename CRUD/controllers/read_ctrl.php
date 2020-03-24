@@ -19,7 +19,7 @@ if (isset($_POST['pseudo']))
     // Réponse sur le navigateur
     if($donnees==null) {
             echo "Pas de profil correspondant";
-    }elseif($donnees!==null) {
+    }else{
             echo '<br>'.'Le profil ayant pour pseudo \''. $donnees['pseudo'] . '\' a pour mot de passe \'' . $donnees['password'] . '\', voici sa description : \'' . $donnees['description'] .'\'<br>' ;
     }
 }
