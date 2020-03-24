@@ -17,7 +17,7 @@ echo '<br/>'.'Bonjour '. $pseudo.' votre mot de pass est '.$password.'<br/>';
 
 // Preparation et execution de la commande sql
 
-$sql = 'INSERT INTO user(pseudo, password, description) VALUES (?,?,?)';
+$sql = 'INSERT INTO user VALUES (?,?,?)';
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$pseudo,$password,$description]);
 
