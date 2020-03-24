@@ -10,7 +10,7 @@ if (isset($_POST['pseudo']))
         die('error sql connection');
     } 
     // Reponse de la commande sur navigateur
-    echo '<br/>'.'Vous voulez lire les information du profil ayant pour pseudo '. $pseudo . '<br>';
+    echo '<br/>'.'Lecture des informations du profil ayant pour pseudo '. $pseudo . '...<br>';
     // Preparation, envoie de la commande sql et lecture du profil corespondant
     $sql = 'SELECT * FROM user WHERE pseudo = ?';
     $stmt = $pdo->prepare($sql);
