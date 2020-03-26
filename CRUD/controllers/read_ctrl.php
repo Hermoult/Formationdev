@@ -5,7 +5,7 @@ if (isset($_POST['pseudo']))
     $pseudo = htmlspecialchars($_POST['pseudo']);
     // Connexion a la base via PDO
     try {
-        $pdo = new PDO('mysql:host=localhost;dbname=crud', 'phpmyadmin', 'Adher57070', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $pdo = new PDO('mysql:host=localhost;dbname=crud', 'phpmyadmin', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     } catch (\Throwable $th) {
         die('error sql connection');
     } 
