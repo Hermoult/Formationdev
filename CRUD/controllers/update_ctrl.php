@@ -3,6 +3,9 @@ if (isset($_POST['pseudo']))
 {
     // Recup des données du formulaire
     $pseudo = htmlspecialchars($_POST['pseudo']);
+    $password = htmlspecialchars($_POST['password']);
+    $description = htmlspecialchars($_POST['description']);
+    
     
     // Variables Database
     $DB_NAME = "crud";
@@ -19,8 +22,23 @@ if (isset($_POST['pseudo']))
     } 
 
     // Preparation, envoie de la commande sql et lecture du profil corespondant
-    $sql = 'SELECT * FROM user WHERE pseudo = ?';
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([$pseudo]);
-    $donnees = $stmt->fetch();
+    
+    $sqls = 'SELECT * FROM user WHERE pseudo = ?';
+    $sqlu ='UPDATE user SET password = ?, description = ? WHERE pseudo = ?';
+    try {
+        $stmt = $pdo->prepare($sqls);
+        $stmt-> execute([$pseudo]);
+        $donnees = $stmt->fetch();
+        var_dump($donnees['pseudo']);
+        } catch (\Throwable $th) {
+            die('error reading');
+            }
+    try {
+        $stmt = $pdo->prepare($sqlu);
+        $stmt -> execute([$password,$description,$pseudo]);
+        $donnees = $stmt->fetch();
+        var_dump($donnees);
+        } catch (\Throwable $th) {
+            die('error updating');
+            }
 }
