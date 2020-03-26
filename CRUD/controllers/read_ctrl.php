@@ -3,14 +3,20 @@ if (isset($_POST['pseudo']))
 {
     // Recup des données du formulaire
     $pseudo = htmlspecialchars($_POST['pseudo']);
-    // Connexion a la base via PDO
+    
+    // Variables Database
+    $DB_NAME = "crud";
+    $DB_DSN = "mysql:host=localhost;dbname=".$DB_NAME;
+    $DB_USER = "adrien"; 
+    $DB_PASSWORD = "adrien"; 
+    // Connexion Database
+
     try {
-        $pdo = new PDO('mysql:host=localhost;dbname=crud', 'adrien', 'adrien', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $pdo = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
+        $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch (\Throwable $th) {
         die('error sql connection');
     } 
-    // Reponse de la commande sur navigateur
-    echo '<br/>'.'Lecture des informations du profil ayant pour pseudo '. $pseudo . '...<br>';
     // Preparation, envoie de la commande sql et lecture du profil corespondant
     $sql = 'SELECT * FROM user WHERE pseudo = ?';
     $stmt = $pdo->prepare($sql);

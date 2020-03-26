@@ -4,13 +4,19 @@ $pseudo = htmlspecialchars($_POST['pseudo']);
 $password = htmlspecialchars($_POST['password']);
 $description = htmlspecialchars($_POST['description']);
 
-// Connexion a la base via PDO
+// Variables Database
+$DB_NAME = "crud";
+$DB_DSN = "mysql:host=localhost;dbname=".$DB_NAME;
+$DB_USER = "adrien"; 
+$DB_PASSWORD = "adrien"; 
+
+// Connexion Database
 try {
-    $pdo = new PDO('mysql:host=localhost;dbname=crud', 'adrien', 'adrien', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $pdo = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
+    $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (\Throwable $th) {
     die('error sql connection');
-}
-echo '<br/>'.'Tentative de suppression du profil '. $pseudo.'...<br/>';
+} 
 
 // Preparation et execution de la commande sql
 $sqls = 'SELECT * FROM user WHERE pseudo = ?';
