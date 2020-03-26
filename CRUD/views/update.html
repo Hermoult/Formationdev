@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>accueil</title>
+</head>
+<body>
+    <header>
+        <h1>Mon CRUD</h1>
+        <a href="../views/create.html">Créer</a>
+        <a href="../views/read.html">Lire</a>
+        <a href="../views/update.html">Mettre à jour</a>
+        <a href="../views/delete.html">Effacer</a>
+    </header>
+    <h2>Mise à jour profil</h2>
+    <form action="../controllers/update_ctrl.php" method="POST" id="form">
+        <div class="pseudo">
+            <label for="pseudo">Pseudo</label> 
+            <input type="text" name="pseudo" id="pseudo" placeholder="Diablo_x9">
+        </div>
+        <div class="password">
+            <label for="password">Password</label>
+            <input type="text" name="password" id="password" placeholder="******">
+        </div>
+        <div class="description">
+            <label for="description">Description</label> 
+            <input type="text" name="description" id="description" placeholder="Quelques mots pour te décrire...">
+        </div>
+        <br>
+        <div class="Pseudo2">
+            <label for="Pseudo2">New Pseudo</label> 
+            <input type="text" name="Pseudo2" id="Pseudo2" placeholder="Diablo_x9">
+        </div>
+        <div class="password2">
+            <label for="password2">New Password</label>
+            <input type="text" name="password2" id="password2" placeholder="******">
+        </div>
+        <div class="description2">
+            <label for="description2">New Description</label> 
+            <input type="text" name="description2" id="description2" placeholder="Quelques mots pour te décrire...">
+        </div>
+        <div class="submit">
+            <input type="submit">
+        </div>
+    </form>    
+</body>
+</html>
