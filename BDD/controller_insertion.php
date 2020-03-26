@@ -1,7 +1,7 @@
 <?php
 
 try {
-    $pdo = new PDO('mysql:host=localhost;dbname=insertion_sql', 'phpmyadmin', 'Adher57070');
+    $pdo = new PDO('mysql:host=localhost;dbname=insertion_sql', 'phpmyadmin', '');
 } catch (\Throwable $th) {
     die('error sql connection');
 }
