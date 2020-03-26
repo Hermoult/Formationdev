@@ -1,0 +1,156 @@
+body {
+    font-family : "montserrat" sans-serif;
+    margin: 15px;
+    background-color: #ffebcd ;
+}
+#flexbox{
+    color:red;
+}
+/* INDEX */
+.liens {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    background-color:rgba(50, 168, 168, 0.972);
+    border: 1px solid;
+}
+.liens a {
+    font-size: 200%;
+    color: black;
+    padding: 4% 8% 4% 8%;
+}
+.liens a:hover {
+    background-color:rgba(32, 110, 110, 0.972);
+}
+.hold {
+    background-color:rgba(64, 66, 66, 0.767);
+}
+#info {
+    margin: 50px auto 50px auto;
+    padding: 10px;
+    width: 650px;
+    border: 2px dashed black;
+}
+
+/* Formes géométriques */
+
+#formesun{
+    display: flex;
+    justify-content: center;
+}
+#formesdeux{
+    display: flex;
+    justify-content: center;
+    height: 100px;
+}
+#formestrois{
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+#carre{
+    border: 1px solid;
+    width:100px;
+    height:100px;
+    border-top-right-radius: 15px;
+	background: lightblue;
+}
+#rond{
+    clear: both;
+    width : 100px;
+    height : 100px;
+    background-color : red;
+    border: 1px solid;
+    -moz-border-radius : 25px;
+    -webkit-border-radius : 25px;
+    border-radius : 50% ;
+    margin: 0px 10px 0px 10px;
+}
+#parallel{
+    border: 1px solid;
+    width: 70px;
+	height:100px;
+	background: lightblue;
+	transform:skew(-10deg);
+}
+#rectv{ 
+    border: 1px solid;
+    height: 150px;
+    width: 70px;
+    background: green;
+    transform: rotate(100deg);
+}
+#rectb{ 
+    border: 1px solid;
+    height: 70px;
+    width: 140px;
+    background: blue;
+    margin-right: 5px;
+    border-radius: 10px;
+}
+#rectj{ 
+    border: 1px solid;
+    height: 70px;
+    width: 140px;
+    background: yellow;
+    margin-left: 5px;
+}
+
+/* AUDIO */
+
+#infoa{
+        margin: 50px auto 50px auto;
+        padding: 10px;
+        width: 650px;
+        border: 2px dotted black;
+}
+p{
+    text-indent: 20px;
+}
+#mp3{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+/* VIDEO */
+
+#infov{
+    margin: 50px auto 50px auto;
+    padding: 10px;
+    width: 650px;
+    border: 2px dashed black;
+}
+#mp4{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+/* IMAGES */
+
+#infoi{
+    margin: 50px auto 50px auto;
+    padding: 10px;
+    width: 500px;
+    border: 2px solid black;
+}
+.img{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+}
+#ryu{
+    height: 300px;
+    /* height: 30%; */
+}
+#fight{
+    height: 80px;
+    margin-top: 200px;
+    /* height: 30%; */
+}
+#fille{
+    height: 300px;
+    /* height: 30%; */
+}

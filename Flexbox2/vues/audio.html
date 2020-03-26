@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header class= "liens">
+        <a id="flexbox" href= "../index.html" title="Index">Flexbox</a>
+        <a class= "hold" href="audio.html" title="Audio">Audio</a>
+        <a href="video.html" title="Vidéo">Vidéo</a>
+        <a href="image.html" title="Image">Image</a>
+    </header>
+    <div id= "infoa">
+        <h3>La Balise &lt;audio&gt;: Le son sur une page html</h3>
+        <p>
+            C'est avec l'attribut src que l'on indique le chemin vers le fichier voulu.
+        </p>
+        <p>&lt;audio control&gt;</p>
+        <p>&lt;source src="monAUdio.mp3" type="audio/mpeg"&gt;</p>
+        <p>&lt;source src="monAUdio.ogg" type="audio/ogg"&gt;</p>
+        <p>&lt;p&gt;Votre navigateur ne prend pas en charge l'audio HTML.</p>
+        <p>Voici un un &lt;a href='myAudio.mp4'&gt;liens vers le fichier audio&lt;/a&gt; pour le télécharger.&lt;p&gt;</p>
+        <p>&lt;/audio&gt;</p>
+    </div>
+    <div id="mp3">
+        <audio controls >
+        <source src="../Public/Audios/audio-street.mp3" type="audio/mpeg"><br>
+        </audio> <br>
+        <p>Votre navigateur ne prend pas en charge l'audio HTML.Voici un <a href="../Public/Audios/audio-street.mp3" type="audio/mpeg">liens vers le fichier audio</a> pour le télécharger
+        </p>
+    </div>
+</body>
+</html>
