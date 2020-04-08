@@ -53,7 +53,6 @@ const winner = names.splice(index, 1);
 result.textContent = 'Le grand vainqueur est ' + winner + '!';
 
 });
-
 });
 
 </script>
