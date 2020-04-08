@@ -35,7 +35,7 @@ if (isset($_POST['pseudo']))
         $stmt ->closeCursor();
         $stmt = $pdo->prepare($sqlu);
         $stmt -> execute([$password,$description,$pseudo]);
-        echo "Le profil $pseudo a été modifié avec succès, nouvau mot de pass : \"$password\", nouvelle description : \"$description\".";
+        echo "Le profil \"$pseudo\" a été modifié avec succès, nouvau mot de pass : \"$password\", nouvelle description : \"$description\".";
     }     
 }
 ?>
