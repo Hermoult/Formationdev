@@ -1,0 +1,7 @@
+{
+    "name": "adrien/autoload",
+    "description": "exemple autoload",
+    "type": "project",
+    "license": "MIT",
+    "require": {}
+}
