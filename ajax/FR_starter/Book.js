@@ -1,4 +1,5 @@
 export class Book {
+
     constructor(title, author, description, pages, ) {
 
         this.title = title;
@@ -24,7 +25,6 @@ export class Book {
             return 1;
             
         }
-
     }
 
 }
@@ -45,7 +45,6 @@ let thirdBook = new Book(
     "Stieg Larsson",
     "Les Hommes qui n'aimaient pas les femmes est le premier tome de la trilogie Millénium, écrite par le Suédois Stieg Larsson et paru en 2005.",
     526);
-
 
 export const books = [firstBook,secondBook,thirdBook];
 
