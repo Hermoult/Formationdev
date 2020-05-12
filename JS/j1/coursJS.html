@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bases Javascript</title>
+    </head>
+    <body>
+        <div id="demo">
+
+        </div>
+        <script>
+            /* LES VARIABLES */
+
+            // Initialiser une variable
+            let maVariable;
+            
+            maVariable = 'valeur';
+            maVariable = 1;
+            maVariable = [1,2,'trois'];
+
+            // Initialisation et afffection
+            let monAutreVariable = 'valeur';
+
+            // Caractère spécifique d'une chaine
+            let caractere_specifique_facon_tableau = 'kryss'[2];
+
+            // Initialiser et affecter un tableau
+            const tableau1 = ['a','b','c'];
+            var tableau2 = tableau1.push('d');
+
+            //Parcourir le tableau
+            tableau1.forEach(element => console.log(element));
+
+            // Concatenation avec le sign +
+            let a,b,c;
+            a= 'o';
+            b ='k';
+            alert(a + b + ' sont concaténés avec cette chaine de caracteres');
+
+            /* ************************** LES CONDITIONS *********************************** */
+    /*
+            == égal à
+
+            != différent de
+
+            === contenu et type égal à
+
+            !== contenu ou type différent de
+
+            > supérieur à
+
+            >= supérieur ou égal à
+
+            < inférieur à
+
+            <= inférieur ou égal à
+
+            && ET valeur1 && valeur2
+
+            || OU valeur1 || valeur2
+
+            ! NON (DIFFERENT DE) !valeur
+    */
+            let number1 = 2, number2 = 2, number3 = 4, result;
+
+                result = number1 == number2; // On spécifie deux variables avec l'opérateur de comparaison entre elles
+                alert(result); // Affiche « true », la condition est donc vérifiée car les deux variables contiennent bien la même valeur
+
+                result = number1 == number3;
+                alert(result); // Affiche « false », la condition n'est pas vérifiée car 2 est différent de 4
+
+                result = number1 < number3;
+                alert(result); // Affiche « true », la condition est vérifiée car 2 est bien inférieur à 4
+
+
+                var number = 4, text = '4';
+
+                    result = number == text;
+                    alert(result); // Affiche « true » alors que « number » est un nombre et « text » une chaîne de caractères
+
+                    result = number === text;
+                    alert(result); // Affiche « false » car cet opérateur compare aussi les types des variables en plus de leurs valeurs
+
+                    if (number === text) {
+                        console.log("c'est vrai");
+                    }
+                    else {
+                        console.log("c'est faux");
+                    }
+
+                    /* ****************************** LES FONCTIONS ************************************** */
+
+                        // Déclarer une fonction
+                        function multiply(num1, num2) {
+                            let result = num1 * num2;
+                            return result;
+                        }
+                        // Appeler une fonction et afficher le résultat dans la console
+                        console.log(multiply(2, 223));
+
+                    // DEFI n°1
+                    function calcul(a, b, sign) {
+                            let result;
+                            switch (sign) {
+                                case '+': result = a + b; break;
+                                case '-': result = a - b; break;
+                                case '*': result = a * b; break;
+                                case '/': result = a / b; break;
+                            }
+                            alert(a + ' ' + sign + ' ' + b + ' = ' + result);
+                        };
+                    
+                    //Dans le terminal
+                    console.log(maVariable);
+                    console.log(caractere_specifique);
+
+                    //console.clear()
+                    alert(monAutreVariable);
+
+                    //En utilisant la sortie HTML
+                    document.write(5+6);
+
+                    //En ajoutant un élément HTML
+                    console.assert(document.getElementById("demo"),"pas d'elements html d'id demA");
+
+                    document.querySelector('div').ineerHTML = 'super';
+
+                        /* ***************************** LES EVENEMENTS *********************************************************** */
+
+                            // Ajouter un écouteur d'évenements sur un élément html et une action a déclencher
+                            document.getElementById("bouton").addEventListener("click", function () {
+                                document.getElementById("demo").innerHTML = "Hello World";
+                            });
+
+                            // Ouvrir un lien dans un nouvel onglet du navigateur
+                            window.open("https://www.blabla.com");
+                            //Demande d'impression la fenêtre courante du navigateur
+                            window.print();
+
+                            //Gestion des déclenchement en rapport au temps*** cf exo plus bas
+                            setInterval();
+                            clearInterval();
+                            setTimeout();
+                            clearTimeout();
+                            
+                        /* ****************************** WEB STORAGE ************************************************************ */
+
+                            //L'objet Storage de l'API Web Storage permet d'accéder au stockage de session ou au stockage local pour un domaine particulier. 
+                            //Cela vous permet de lire, ajouter, modifier et supprimer des éléments de données stockés.
+
+                            // Enregistrer
+                            localStorage.setItem("lastname", "Smith");
+                            // Supprimer la donnée
+                            localStorage.removeItem("lastname");
+                            // Enregistrer
+                            localStorage.setItem("lastname", "Jones");
+                            // Retrouver la donnée
+                            document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+
+        </script>
+        
+    </body>
+</html>

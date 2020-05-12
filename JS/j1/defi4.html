@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Defi 4</title>
+</head>
+
+<body>
+    
+    <form id="form" class="p-4">
+        <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" class="form-control" id="nom" placeholder="Example input">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Another input">
+        </div>
+        <div class="form-group">
+            <label for="pass">Mot de pass</label>
+            <input type="password" class="form-control" id="pass" placeholder="Another input">
+        </div>
+        <button id="enregistrer" type="submit" class="btn btn-primary">Enregistrer</button>
+        <button id="afficher" type="submit" class="btn btn-primary">Afficher</button>
+        <button id="supprimer" type="submit" class="btn btn-primary">Supprimer</button>
+    </form>
+
+    <div id="affichage">
+
+    </div>
+
+    
+
+    
+    {# *************************************************
+
+    Défi n°4:
+
+    a/ Dans un formulaire html on a les champs nom, email
+    et mot_de_passe.
+    Ecrivez la fonction qui se déclenche avec un bouton
+    intitulé "Enregistrer" qui permet d'enregistrer les
+    informations dans le localStorage.
+
+    b/ Rajouter un bouton qui enclenche une fonction qui
+    permet de lire et afficher le contenu du localStorage
+
+    c/ Ajouter un bouton qui enclenche une fonction qui
+    permet de supprimer le localStorage
+
+    d/ Ajouter des messages d'alerte dans la console pour
+    chaque action de bouton avec un message pertinent
+
+
+    **************************************************** #}
+
+    <script>
+        document.getElementById("enregistrer").addEventListener("click", function () {
+            localStorage.setItem("nom", (document.getElementById("nom").value))
+            localStorage.setItem("email", (document.getElementById("email").value))
+            localStorage.setItem("pass", (document.getElementById("pass").value))
+            alert ('Bien enregistré');
+        });
+        
+        document.getElementById("afficher").addEventListener("click",
+            function (){
+                document.getElementById("affichage").innerHTML=(localStorage.getItem("nom") + ' ' + localStorage.getItem("email") + ' ' + localStorage.getItem("pass"));
+                alert('affichage des données');
+            });
+
+        document.getElementById("supprimer").addEventListener("click",
+            function () {
+                localStorage.removeItem("nom");
+                localStorage.removeItem("email");
+                localStorage.removeItem("pass");
+                alert('données supprimées');
+            });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
