@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Fire and Ice</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+		<script>
+
+/* ----------------------------------------------METHODE JIM---------------------------------------------- */
+
+			function RequestCharacters() {
+                var characterId = document.getElementById("id_verif").value;
+                httpRequest = new XMLHttpRequest();
+
+                if (!httpRequest) {
+                    alert('Impossible de créer une instance XMLHTTP');
+                    return false;
+                }
+
+                httpRequest.onreadystatechange = alertContents;
+
+                httpRequest.open('GET', 'https://anapioficeandfire.com/api/characters/' + characterId);
+
+                httpRequest.send();
+            }
+
+            function RequestBooks() {
+                var bookId = document.getElementById("id_verif").value;
+                httpRequest = new XMLHttpRequest();
+
+                if (!httpRequest) {
+                    alert('Impossible de créer une instance XMLHTTP');
+                    return false;
+                }
+
+                httpRequest.onreadystatechange = alertContents;
+
+                httpRequest.open('GET', 'https://anapioficeandfire.com/api/books/' + bookId);
+
+                httpRequest.send();
+            }
+
+            function alertContents() {
+                if (httpRequest.readyState === XMLHttpRequest.DONE) {
+                    if (httpRequest.status === 200) {
+                        alert(httpRequest.responseText);
+                    } else {
+                        alert('Un problème est survenu avec la requête.');
+                    }
+                }
+            }
+
+/* -------------------------------------------------METHODE A L'ANCIENNE---------------------------------------------------- */
+
+            function showcharacters() {
+                    var charactersId = document.getElementById("id_charactere").value;
+                    var xmlhttp = new XMLHttpRequest();
+
+                    xmlhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            document.getElementById("affichage").innerHTML = this.responseText;
+                        }
+
+                    };
+                    xmlhttp.open('GET', 'https://anapioficeandfire.com/api/characters/' + charactersId, true);
+                    xmlhttp.send();
+            }
+
+            function showBooks() {
+                        var bookId = document.getElementById("id_book").value;
+                        var xmlhttp = new XMLHttpRequest();
+                        
+                        xmlhttp.onreadystatechange = function () {
+                            if (this.readyState == 4 && this.status == 200) {
+                                var req = this.responseText;
+                                var reqJs = JSON.parse(req);
+
+
+                                document.getElementById("name").innerHTML = reqJs.name;
+                                document.getElementById("isbn").innerHTML = reqJs.isbn;
+                                document.getElementById("authors").innerHTML = reqJs.authors;
+                                document.getElementById("numberOfPages").innerHTML = reqJs.numberOfPages;
+                                document.getElementById("publisher").innerHTML = reqJs.publisher;
+                                document.getElementById("country").innerHTML = reqJs.country;
+                                document.getElementById("mediaType").innerHTML = reqJs.mediaType;
+                                document.getElementById("released").innerHTML = reqJs.released;
+                            }
+                        }
+                        xmlhttp.open('GET', 'https://anapioficeandfire.com/api/books/' + bookId, true);
+                        xmlhttp.send();
+            }
+
+		</script>
+
+	</head>
+	<body class="p-4">
+        <div class="conatiner row">
+            <div class="col-6">
+                <h3>Recherche API d'un personnage</h3>
+                <input type="text" id="id_charactere" placeholder="1,2,3...">
+                <input id="ajaxButton" class="btn btn-secondary" type="button" value="Chercher" onclick="showcharacters();">
+            </div>
+            <br><br>
+            <div class="=col-6">
+                <h3>Recherche API d'un livre</h3>
+
+                <input type="text" id="id_book" placeholder="1,2,3...">
+                <input id="ajaxButton" class="btn btn-secondary" type="button" value="Chercher" onclick="showBooks();">
+            </div>
+        </div>
+
+        <br>
+                <div id="container">
+                    <p id="name"></p>
+                    <p id="isbn"></p>
+                    <p id="authors"></p>
+                    <p id="numberOfPages"></p>
+                    <p id="publisher"></p>
+                    <p id="country"></p>
+                    <p id="mediaType"></p>
+                    <p id="released"></p>
+                </div>
+
+            
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	</body>
+</html>

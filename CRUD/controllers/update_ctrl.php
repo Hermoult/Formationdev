@@ -22,20 +22,11 @@ if (isset($_POST['pseudo']))
 
     // Lecture du profil
     
-    $sqls = 'SELECT * FROM user WHERE pseudo = ?';
     $sqlu ='UPDATE user SET password = ?, description = ? WHERE pseudo = ?';
     
-    $stmt = $pdo->prepare($sqls);
-    $stmt-> execute([$pseudo]);
-    $profil = $stmt ->fetch();
         
-    if ($profil == null){
-        echo "Pas d'utilisateurs correspondant <br>";
-    } else {
-        $stmt ->closeCursor();
         $stmt = $pdo->prepare($sqlu);
         $stmt -> execute([$password,$description,$pseudo]);
         echo "Le profil \"$pseudo\" a été modifié avec succès, nouvau mot de pass : \"$password\", nouvelle description : \"$description\".";
     }     
-}
 ?>

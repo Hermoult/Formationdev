@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>requête ajax get js</title>
+</head>
+
+<body>
+    <input type="text" id="username_verif" onchange="makeRequest();">
+    <script>
+        function makeRequest() {
+            httpReq = new XMLHttpRequest();
+            var userName = document.getElementById("username_verif").value;
+            if (!httpReq) {
+                alert('Impossible de créer une instance de XMLHTTP');
+                return false;
+            }
+            httpReq.onreadystatechange = alertContents;
+
+            httpReq.open('GET', 'ajax.php?q=' + userName);
+
+            httpReq.send();
+
+        };
+
+        function alertContents() {
+            if (httpReq.readyState === XMLHttpRequest.DONE) {
+                if (httpReq.status === 200) {
+                    alert(httpReq.responseText);
+                } else {
+                    alert('Il y a eu un problème avec la requête.');
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

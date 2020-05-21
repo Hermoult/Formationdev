@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+
+</head>
+<body>
+  
+    <input type="number" maxlength="4" id="demande">
+    <input id="btn_req"  type="button" value="Chercher" onclick="requete();">
+
+    <div id="container">
+      <p id="nom"></p>
+      <p id="genre"></p>
+      <p id="culture"></p>
+      <p id="born"></p>
+      <p id="titre"></p>
+      <p id="surnom"></p>
+      <p id="series"></p>
+      <p id="acteur"></p>
+    </div>
+
+    <script>
+    
+      function requete() {
+              var demande = document.getElementById('demande').value;
+              var xmlhttp = new XMLHttpRequest();
+              xmlhttp.onreadystatechange = function() {
+                  if (this.readyState == 4 && this.status == 200) {
+                      var req = this.responseText;
+                      var reqJs = JSON.parse(req);
+                      
+                        
+                        document.getElementById("nom").innerHTML=reqJs.name;
+                        document.getElementById("genre").innerHTML=reqJs.gender;
+                        document.getElementById("culture").innerHTML=reqJs.culture;
+                        document.getElementById("born").innerHTML=reqJs.born;
+                        document.getElementById("titre").innerHTML=reqJs.titles;
+                        document.getElementById("surnom").innerHTML=reqJs.aliases;
+                        document.getElementById("series").innerHTML=reqJs.tvSeries;
+                        document.getElementById("acteur").innerHTML=reqJs.playedBy;
+                      
+
+                      }
+              }
+              xmlhttp.open("GET", "https://anapioficeandfire.com/api/characters/"+demande, true);
+              xmlhttp.send();
+          
+      }
+      
+      
+
+    </script>
+

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <title>Bases Javascript</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+
+    <div class="demo">
+
+    </div>
+
+
+    <!-- Optional JavaScript -->
+
+    <script>
+
+        function creerNouvellePersonne(nom) {
+
+            var obj = {};       //Initialisateur d'objet Javascript
+
+            obj.nom = nom;      //Affectation de l'attribut de l'objet
+
+            obj.salutation = function() {       //Méthode de salutation pour l'objet Personne
+                alert('Salut ! Je m\'appelle' + this.nom + '.');
+            };
+
+            return obj;         // Retour au programme de l'objet
+        }
+
+        var roger = creerNouvellePersonne('roger');     //Instanciation de l'objet Roger
+        roger.nom;
+        roger.salutation();
+
+    /**************************************** Défi n°1 *************************************************
+    
+    
+    
+        Définissez un objet Voiture qui prendra en attributs sa marque et une méthode start qui
+        alerte 'Vrooooom je suis une' suivi de sa marque.
+        instancier un objet voiture de marque Renault et démarrez le.
+    ****************************************************************************************************/
+
+        function Voiture (marque) {
+
+            var voiture ={};
+
+            voiture.marque = marque;
+
+            voiture.start = function () {
+                alert('Vrooooom je suis une ' + this.marque);
+            };
+
+            return voiture;
+        }
+
+        var Renault = Voiture('Renault');
+        Renault.start();
+
+        //-------------------------------------------------------------------------------
+
+
+        function Personne(nom) {
+            this.nom = nom;
+            this.salutation = function {
+                alert('Bonjour ! Je m\'appelle' + this.nom + '.');
+            }
+        }
+
+        var bob = new Personne('Bob');
+        var sarah = new Personne('Sarah');
+
+        bob.nom;
+        bob.salutation();
+
+
+
+        /**************************************** Défi n°2 *************************************************
+    
+    
+    
+        Réécrivez la fonction de l'exercice 1 pour l'adapter à cette nouvelle écriture.
+        instancier un objet voiture de marque Renault et démarrez le.
+    ****************************************************************************************************/
+
+
+        function Voiture(vitesse) {
+            this.vitesse = vitesse;
+            this.start= function () {
+                alert('Bonjour ! Je m\'appelle' + this.nom + '.');
+            }
+        }
+        var voiture = new Voiture('Renault');
+        voiture.marque;
+        voiture.start();
+
+        /* ************** Défi n°3 ********************************************************
+    
+        Une personne se défini par son prenom, son nom, son age, son genre, ses intérêts.
+        Une personne peut saluer avec un "Bonjour ! je m'appelle " suivi de son prenom, méthode salutation()
+        on peut afficher la bio de cette personne avec une méthode bio() qui affichera par exemple:
+        
+        roger a 46 ans. Il aime la musique et le ski
+        
+        ***********************************************************************************/
+
+
+        function Personne(prenom,nom,age,genre,interets) {
+            this.prenom = prenom;
+            this.nom = nom;
+            this.age = age;
+            this.genre = genre;
+            this.interets = interet;
+
+            this.salutation=function() {
+                alert ('Bonjour ! Je m\'appelle' + this.prenom + 'j\'ai' + this.age + ' ans, je suis un(e)' + this.genre + ' et j\'adoooooore le ' + this.interets);
+            };
+            this.bio=function() {
+                alert(this.prenom + 'a' + this.age + ' ans, c\'est un(e)' + this.genre + ' il adoooooore le ' + this.interets);
+            };
+        }
+        
+
+
+    </script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>

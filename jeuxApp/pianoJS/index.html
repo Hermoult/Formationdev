@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="keys">
+        <div data-key="65" class="key"> <!-- Touche a-->
+            <kbd>a</kbd>
+            <span class="sound">Do</span>
+        </div>
+        <div data-key="90" class="key"> <!-- Touche z-->
+            <kbd>z</kbd>
+            <span class="sound">Re</span>
+        </div>
+        <div data-key="69" class="key"> <!-- Touche e-->
+            <kbd>e</kbd>
+            <span class="sound">Mi</span>
+        </div>
+        <div data-key="82" class="key"> <!-- Touche r-->
+            <kbd>r</kbd>
+            <span class="sound">Fa</span>
+        </div>
+        <div data-key="84" class="key"> <!-- Touche t-->
+            <kbd>t</kbd>
+            <span class="sound">Sol</span>
+        </div>
+        <div data-key="89" class="key"> <!-- Touche y-->
+            <kbd>y</kbd>
+            <span class="sound">La</span>
+        </div>
+        <div data-key="85" class="key"> <!-- Touche u-->
+            <kbd>u</kbd>
+            <span class="sound">Si</span>
+        </div>
+    </div>
+
+        <audio data-key="65"src="pianoSon/do.wav"></audio>
+        <audio data-key="90"src="pianoSon/re.wav"></audio>
+        <audio data-key="69"src="pianoSon/mi.wav"></audio>
+        <audio data-key="82"src="pianoSon/fa.wav"></audio>
+        <audio data-key="84"src="pianoSon/sol.wav"></audio>
+        <audio data-key="89"src="pianoSon/la.wav"></audio>
+        <audio data-key="85"src="pianoSon/si.wav"></audio>
+
+    <script src="app.js"></script>
+</body>
+</html>
