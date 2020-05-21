@@ -13,7 +13,6 @@ export default class Contact extends Component {
     }
 
     supprimeContact = () => {
-        this.props.supprimeClick()
     }
 
     render() {
