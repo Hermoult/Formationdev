@@ -1,0 +1,16 @@
+{   
+    "description": "ecf 3",
+    "name": "adrien/ecf",
+    "authors": [
+        {
+            "name": "Hermoult",
+            "email": "adrienhergat@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src"
+        }
+    },
+    "require": {}
+}
