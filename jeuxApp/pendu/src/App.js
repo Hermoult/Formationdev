@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react'
 import Clavier from './components/Clavier'
+import randomint from 'random-int';
 
 
 
@@ -22,12 +23,18 @@ export default class App extends Component {
   }
 
   newGame = () => {
-    const motMystere = this.state.list[0];
+    
+
+
+    const motMystere = this.state.list[randomint(0,2)];
+
     this.setState({motMystere});
     const motActuel = motMystere.split('').map(function() {
       return "_" + " "
     })
     this.setState({motActuel,vie:this.state.maxVie, propose:[]});
+    
+    
 
   }
 
